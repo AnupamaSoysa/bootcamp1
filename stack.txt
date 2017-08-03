@@ -1,0 +1,50 @@
+package stack;
+
+import java.util.Stack;
+
+public class Application {
+	
+	 public static Stack<Integer> sortStack(Stack<Integer> stack){
+         
+	        Stack<Integer> tempStack = new Stack<Integer>();
+	        while(!stack.isEmpty()) {
+	            int top = stack.pop();
+	            while(!tempStack.isEmpty() && tempStack.peek() > top) {
+	                stack.push(tempStack.pop());
+	            }
+	            tempStack.push(top);
+	        }
+	       
+	        return tempStack;
+	    }
+	     
+	    public static void main(String a[]){
+	         
+	        Stack<Integer> stack = new Stack<Integer>();
+	        stack.add(10);
+	        stack.add(5);
+	        stack.add(15);
+	        stack.add(25);
+	        stack.add(20);
+	       
+	        System.out.println(stack);
+	        System.out.println(sortStack(stack));
+	    }
+	
+/*	public static void main(String [] args){
+		
+		Stack<Integer> stack = new Stack<>();	
+		stack.push(10);
+		stack.push(5);
+		stack.push(20);
+		stack.push(15);
+		stack.push(25);
+		stack2 stack2 = new stack2();
+		//stack1 stack1 = new stack1();
+		stack2.sort(stack);
+		//stack1.sort(stack);
+		
+		
+	}*/
+
+}
